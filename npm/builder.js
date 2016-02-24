@@ -388,6 +388,7 @@ Builder.prototype.compileExamples = function(callback) {
   this.mkdirSync(this.examplesBuildDir);
   var opalCompiler = new OpalCompiler();
   opalCompiler.compile('examples/asciidoctor_example.rb', this.examplesBuildDir + '/asciidoctor_example.js');
+  opalCompiler.compile('examples/defold_example.rb', this.examplesBuildDir + '/defold_example.js');
   opalCompiler.compile('examples/userguide_test.rb', this.examplesBuildDir + '/userguide_test.js');
   callback();
 }
@@ -406,6 +407,7 @@ Builder.prototype.copyExamplesResources = function(callback) {
 
   log.title('copy resources to ' + this.examplesBuildDir + '/');
   this.copyToExamplesBuildDir('examples/asciidoctor_example.html');
+  this.copyToExamplesBuildDir('examples/defold_example.html');
   this.copyToExamplesBuildDir('examples/userguide_test.html');
   this.copyToExamplesBuildDir('examples/asciidoctor.css');
   this.copyToExamplesBuildDir('README.adoc');
@@ -448,6 +450,7 @@ Builder.prototype.compile = function() {
   log.title('compile core lib');
   opalCompiler.compile('-I asciidoctor -g asciidoctor -r asciidoctor/converter/docbook5', 'build/asciidoctor-docbook5.js');
   opalCompiler.compile('-I asciidoctor -g asciidoctor -r asciidoctor/converter/docbook45', 'build/asciidoctor-docbook45.js');
+  opalCompiler.compile('-I asciidoctor -I lib -g asciidoctor -r asciidoctor/converter/defold', 'build/asciidoctor-defold.js');
   opalCompiler.compile('-I asciidoctor -g asciidoctor -r asciidoctor/extensions', 'build/asciidoctor-extensions.js');
   opalCompiler.compile('-I lib -I asciidoctor -g asciidoctor -r asciidoctor', 'build/asciidoctor-core.js');
 

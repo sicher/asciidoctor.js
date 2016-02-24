@@ -25,6 +25,7 @@ require 'asciidoctor/opal_ext/dir'
 require 'asciidoctor/opal_ext/file'
 require 'asciidoctor/opal_ext/match_data'
 require 'asciidoctor/opal_ext/kernel'
+require 'asciidoctor/opal_ext/defold'
 
 case JAVASCRIPT_PLATFORM
   when 'java-nashorn'
