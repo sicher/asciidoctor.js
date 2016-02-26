@@ -56,8 +56,10 @@ var javaVersionText = function() {
 
 function Builder() {
   this.npmCoreFiles = [
+    'node_modules/jade/jade.js',
     'src/npm/prepend-core.js',
-    'build/asciidoctor-core.js'
+    'build/asciidoctor-core.js',
+    'build/asciidoctor-defold.js'
   ];
   this.benchmarkBuildDir = 'build/benchmark';
   this.examplesBuildDir = 'build/examples';
@@ -122,8 +124,8 @@ Builder.prototype.release = function(releaseVersion) {
     function(callback) { builder.copyToDist(callback); },
     //function(callback) { builder.commit(releaseVersion, callback); },
     //function(callback) { builder.publish(callback); },
-    function(callback) { builder.prepareNextIteration(callback); },
-    function(callback) { builder.completeRelease(releaseVersion, callback); }
+    //function(callback) { builder.prepareNextIteration(callback); },
+    //function(callback) { builder.completeRelease(releaseVersion, callback); }
   ], function() {
     log.success('Done in ' + process.hrtime(start)[0] + 's');
   });
