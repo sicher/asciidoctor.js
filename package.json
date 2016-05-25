@@ -1,6 +1,6 @@
 {
   "name": "asciidoctor.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A JavaScript AsciiDoc processor, cross-compiled from the Ruby-based AsciiDoc implementation, Asciidoctor, using Opal",
   "main": "dist/npm/asciidoctor-core.min.js",
   "files": [
@@ -52,6 +52,6 @@
     "jasmine": "^2.4.1",
     "colors": "1.1.2",
     "async": "^1.5.0",
-    "jade": "^1.11.0"
+    "pug": "^2.0.0-alpha8"
   }
 }

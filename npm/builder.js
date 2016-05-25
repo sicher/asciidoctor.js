@@ -56,7 +56,7 @@ var javaVersionText = function() {
 
 function Builder() {
   this.npmCoreFiles = [
-    'node_modules/jade/jade.js',
+    'node_modules/pug/development.js',
     'src/npm/prepend-core.js',
     'build/asciidoctor-core.js',
     'build/asciidoctor-defold.js'
